@@ -31,7 +31,9 @@ export default function CalendarGrid({
         <>
             <div className="calendar-grid-header">
                 {DAYS.map((d) => (
-                    <span key={d}>{d}</span>
+                    <span key={d} className="day-label">
+                        {d}
+                    </span>
                 ))}
             </div>
 

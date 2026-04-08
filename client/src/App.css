@@ -1,79 +1,68 @@
 .app-shell {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 16px;
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(74, 111, 255, 0.12),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at bottom right,
-            rgba(101, 173, 255, 0.08),
-            transparent 24%
-        ),
-        #eef4fb;
-    overflow: hidden;
     display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: var(--body-bg);
+    transition:
+        background 0.5s ease,
+        color 0.5s ease;
     align-items: center;
-    justify-content: center;
 }
-
 .calendar-page {
     width: 100%;
-    height: 100%;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
 }
-
 .calendar-layout {
     display: grid;
-    gap: 16px;
-    grid-template-columns: 1fr 1.2fr 0.9fr;
+    align-items: start;
+    gap: 18px;
+    grid-template-columns: 1fr 1.8fr 0.92fr;
     grid-template-areas: "hero calendar notes";
     width: 100%;
-    height: 100%;
-    max-height: 100vh;
 }
-
-/* RESPONSIVENESS */
-
-@media (max-width: 1280px) {
+@media (max-width: 1300px) {
     .calendar-layout {
-        grid-template-columns: 0.95fr 1fr 0.85fr;
-        gap: 12px;
+        grid-template-columns: 1fr 1.4fr 0.9fr;
     }
 }
-
 @media (max-width: 1024px) {
     .app-shell {
-        padding: 12px;
+        padding: 18px;
     }
-
     .calendar-layout {
         grid-template-columns: 1fr;
         grid-template-areas:
             "hero"
             "calendar"
             "notes";
-        max-height: none;
-        overflow-y: auto;
-        padding-bottom: 20px;
+        justify-items: center;
+    }
+    .calendar-layout > * {
+        width: min(100%, 780px);
     }
 }
-
 @media (max-width: 700px) {
     .app-shell {
-        padding: 10px;
-        height: auto;
-        min-height: 100vh;
+        padding: 16px;
     }
-
-    .calendar-layout {
-        max-height: none;
+}
+@media (max-width: 540px) {
+    .app-shell {
+        padding: 12px;
+    }
+}
+@media (max-width: 420px) {
+    .app-shell {
+        padding: 10px;
+    }
+    .calendar-page {
+        padding: 0;
     }
 }

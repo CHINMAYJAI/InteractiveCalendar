@@ -26,18 +26,18 @@ export default function Hero({ viewDate, calendarCells, selection }) {
 
     return (
         <article className="hero-card">
-            <div className="hero-media" />
+            <div className="hero-media" >
+                <img src="/hero.jpg" alt="" />
+            </div>
             <div className="hero-copy">
-                <p className="eyebrow">Interactive wall calendar</p>
+                <p className="eyebrow">Digital calendar</p>
 
                 <h1>
-                    {MONTHS[viewDate.getMonth()]}
-                    <br />
-                    {viewDate.getFullYear()}
+                    {MONTHS[viewDate.getMonth()]} {viewDate.getFullYear()}
                 </h1>
 
                 <p className="hero-description">
-                    A tactile planning surface with a hero image.
+                    Visualize your month and capture what matters.
                 </p>
 
                 <div className="hero-footer">

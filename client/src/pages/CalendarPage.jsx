@@ -3,8 +3,6 @@ import Hero from "../Components/Hero/Hero";
 import CalendarPanel from "../Components/Calendar/CalendarPanel";
 import NotesPanel from "../Components/Notes/NotesPanel";
 
-const today = new Date();
-
 const formatDateKey = (date) => date.toISOString().slice(0, 10);
 
 const buildMonthGrid = (year, month) => {
@@ -35,11 +33,7 @@ const getMonthNoteKey = (y, m) => `month-note-${y}-${m}`;
 const getRangeNoteKey = (start, end) =>
     `range-note-${formatDateKey(start)}-${formatDateKey(end ?? start)}`;
 
-export default function CalendarPage() {
-    const [viewDate, setViewDate] = useState(
-        new Date(today.getFullYear(), today.getMonth(), 1)
-    );
-
+export default function CalendarPage({ viewDate, setViewDate }) {
     const [selection, setSelection] = useState({ start: null, end: null });
     const [monthNote, setMonthNote] = useState("");
     const [rangeNote, setRangeNote] = useState("");
