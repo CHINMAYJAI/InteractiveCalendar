@@ -1,0 +1,112 @@
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-container svg {
+    flex-shrink: 0;
+}
+
+label {
+    font-size: 13px;
+    color: #424242;
+    font-weight: 500;
+}
+
+.btn-color-mode-switch {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner {
+    margin: 0;
+    width: 118px;
+    height: 34px;
+    background: #e0e0e0;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    top: 7px;
+    right: 20px;
+}
+
+.btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    width: 58px;
+    height: 26px;
+    background: #fff;
+    border-radius: 999px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 8px -3px rgba(0, 0, 0, 0.2);
+    padding: 5px 0px;
+}
+
+.btn-color-mode-switch > .alert {
+    display: none;
+    background: #ff9800;
+    border: none;
+    color: #fff;
+}
+
+.btn-color-mode-switch input[type="checkbox"] {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    margin: 0;
+}
+
+.btn-color-mode-switch
+    input[type="checkbox"]:checked
+    + label.btn-color-mode-switch-inner {
+    background: #151515;
+    color: #fff;
+}
+
+.btn-color-mode-switch
+    input[type="checkbox"]:checked
+    + label.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    left: 56px;
+    background: #3c3c3c;
+}
+
+.btn-color-mode-switch
+    input[type="checkbox"]:checked
+    + label.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 20px;
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked ~ .alert {
+    display: block;
+}
+
+.dark-preview {
+    background: #0d0d0d;
+}
+
+.white-preview {
+    background: #fff;
+}
