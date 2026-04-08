@@ -1,0 +1,94 @@
+.notes-panel {
+    grid-area: notes;
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 24px 60px rgba(42, 54, 95, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.notes-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.notes-panel h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.panel-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+    color: #6b7280;
+}
+
+.note-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #eef4ff;
+    color: #2d4dde;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.field-group {
+    display: grid;
+    gap: 8px;
+}
+
+.field-group span {
+    color: #334155;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 80px;
+    max-height: 140px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid #d2d8e2;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #223148;
+    background: #f8fbff;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4e7cf8;
+    box-shadow: 0 0 0 3px rgba(78, 124, 248, 0.12);
+}
+
+.range-note-card {
+    display: grid;
+    gap: 8px;
+}
+
+.range-note-card h3 {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.range-note-header p {
+    margin: 2px 0 0;
+    color: #52606d;
+    font-size: 0.8rem;
+}
